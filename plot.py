@@ -6,10 +6,8 @@ def plot_all(df):
     "fixed_m": ("n", "Размер N при M = 100", "M = 100, N растёт"),
     "varying_ratio": ("ratio", "Отношение N/M при N = 2^20", "N = 2^20, N/M растёт")
     }
-    
     for name, df_ in df.groupby("experiment", sort=False):
         exp_name = exp[name]
-        
         for alg_name, alg_df in df_.groupby("algorithm"):
             plt.plot(alg_df[exp_name[0]], alg_df["time"], ".-", label=alg_name)
         plt.xscale("log", base=2)          
