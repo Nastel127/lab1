@@ -5,7 +5,6 @@ from algorithms.binsearch import binsearch
 from algorithms.exponential_search import exponential_search
 from algorithms.two_binsearch import two_binsearch
 
-
 def makes_ab(m, n, common):
     a = np.arange(n, dtype=np.int32)*2
 
@@ -15,8 +14,6 @@ def makes_ab(m, n, common):
     if common is not None:
         b[common] = indx[common]*2
     return a.tolist(), b.tolist(), common is not None
-
-
 
 def test_two_pointer(n):
     a, b, common = makes_ab(m=n, n=n, common=choice([None, 0, n//2, n-1]))
