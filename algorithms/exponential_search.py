@@ -6,8 +6,7 @@ def bin_search(arr, x, l, r):
         else:
             r = m
     return l
-
-
+    
 def exponential_search(arr1, arr2):
     if len(arr1) < len(arr2):
         mx_arr, mn_arr = arr2, arr1
