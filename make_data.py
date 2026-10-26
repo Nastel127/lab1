@@ -18,19 +18,15 @@ def makes(m, n, common=None):
         b[common] = indx[common]*2
     return a, b.astype(np.int32)
 
-
 def identical_size():
     return [(2**i, 2**i) for i in range(1, 21)]
-
 
 def fixed_m(m=100): 
     return [(m, 2**i) for i in range(1, 21) if m <= 2**i]
 
-
 def varying_ratio(): 
     n = 2**20
     return [(n // 2**k, n) for k in range(0, 21)]
-
 
 algorithms = {
     "Два указателя": two_pointer,
@@ -38,13 +34,11 @@ algorithms = {
     "Экспоненциальный": exponential_search,
     "Двойной бинарный": two_binsearch,
 }
-
 experiments = {
     "identical_size": identical_size,
     "fixed_m": fixed_m,
     "varying_ratio": varying_ratio,
 }
-
 def run_all(repeats=5):
     rows = []                                          
 
